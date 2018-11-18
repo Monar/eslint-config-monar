@@ -1,22 +1,22 @@
 {
   "name": "eslint-config-monar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "author": "Piotr Tomasz Monarski",
   "description": "Monar eslint config",
   "repository": "Monar/eslint-config-monar",
   "license": "MIT",
   "peerDependencies": {
-    "babel-eslint": "7 || 8",
-    "eslint": ">= 3.14.1",
-    "eslint-config-prettier": "2",
-    "eslint-plugin-babel": "4.1.x || 5",
-    "eslint-plugin-import": "2",
-    "eslint-plugin-prettier": "2",
-    "prettier": "1"
+    "babel-eslint": "*",
+    "eslint": "*",
+    "eslint-config-prettier": "*",
+    "eslint-plugin-babel": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-prettier": "*",
+    "prettier": "*"
   },
   "optionalDependencies": {
-    "eslint-plugin-react": "7"
+    "eslint-plugin-react": "*"
   },
   "files": [
     "index.js",
