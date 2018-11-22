@@ -3,12 +3,13 @@
 module.exports = {
   extends: ['eslint:recommended', 'prettier', 'plugin:import/errors'],
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 2019,
     sourceType: 'module',
   },
   parser: 'babel-eslint',
   plugins: ['prettier', 'babel', 'import'],
   env: {
+    'es6': true,
     'browser': true,
   },
   globals: {
