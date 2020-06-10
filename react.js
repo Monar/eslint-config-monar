@@ -1,5 +1,6 @@
 'use strict';
 
+/* eslint-disable-next-line  @typescript-eslint/no-var-requires */
 const config = require('./index.js');
 
 module.exports = {
@@ -11,10 +12,15 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: [...config.plugins, 'react'],
+  plugins: [...config.plugins, 'react', 'react-hooks'],
+  settings: {
+    ...config.settings,
+    react: {
+      version: 'detect',
+    },
+  },
   rules: {
     ...config.rules,
-    'babel/quotes': 'off',
     'prettier/prettier': [
       'error',
       {
@@ -24,6 +30,7 @@ module.exports = {
     ],
     'react/display-name': 'off',
     'react/prop-types': ['error', { skipUndeclared: true }],
-    'react/display-name': 'off',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
   },
 };

@@ -1,34 +1,60 @@
 # Monar eslint-config
 
 ## Install
-```
+
+```bash
 yarn add -ED eslint-config-monar
 ```
-#### Peer dependencies
-```
-yarn add -ED eslint babel-eslint prettier eslint-config-prettier \
-eslint-plugin-prettier eslint-plugin-babel eslint-plugin-import
-```
-#### Optional dependencies
-```
-yarn add -ED eslint-plugin-react
-```
 
-## Use
-For general purpose extend your `.eslintrc` configuration with:
+## Setup
+
+Extend your `.eslintrc` configuration with:
+
 ```js
 extends: ['monar'],
 ```
-And for react development extend with:
+
+Configure a `tsconfig.json` file to the root of the workspace if you
+don't already have one:
+
+```json
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["es2017", "dom"],
+    "rootDir": "src",
+    "jsx": "react",
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true
+  },
+  "exclude": ["node_modules"]
+}
+```
+
+### React (optional)
+
+Install peer dependencies:
+
+```bash
+yarn add -ED eslint-plugin-react eslint-plugin-react-hooks
+```
+
+Extend your `.eslintrc` configuration with:
+
 ```js
 extends: ['monar/react'],
 ```
 
 ## Helpers
-Add those to your `package.json`:
+
+Add these to your `package.json` scripts:
+
 ```json
 "scripts": {
-  "lint": "eslint .",
-  "lint:fix": "eslint --fix ."
+  "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src",
+  "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src"
 }
 ```
