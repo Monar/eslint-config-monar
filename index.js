@@ -50,10 +50,12 @@ module.exports = {
     curly: 'error',
     'no-use-before-define': 'off',
     'no-var': ['error'],
+    'one-var': ['error', 'never'],
     'object-curly-spacing': ['error', 'always'],
     'no-console': ['error', { allow: ['error', 'warn'] }],
-    '@typescript-eslint/prefer-interface': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/prefer-interface': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
     'import/order': [
       'error',
